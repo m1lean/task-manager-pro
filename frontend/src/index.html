@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Современный менеджер задач с TypeScript">
+    <title>Task Manager Pro - Управление задачами</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ Task Manager Pro</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span>📊</span> Всего: <span id="total-count">0</span>
+                </div>
+                <div class="stat">
+                    <span>⚡</span> Активных: <span id="active-count">0</span>
+                </div>
+                <div class="stat">
+                    <span>✅</span> Завершенных: <span id="completed-count">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="add-task-form">
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="task-title">📝 Название задачи</label>
+                    <input 
+                        type="text" 
+                        id="task-title" 
+                        placeholder="Введите название задачи..." 
+                        required
+                        autocomplete="off"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="task-description">📄 Описание</label>
+                    <textarea 
+                        id="task-description" 
+                        placeholder="Добавьте описание (опционально)..."
+                    ></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="task-priority">🎯 Приоритет</label>
+                    <select id="task-priority">
+                        <option value="low">Низкий</option>
+                        <option value="medium" selected>Средний</option>
+                        <option value="high">Высокий</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    ➕ Добавить задачу
+                </button>
+            </form>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">
+                🌐 Все
+            </button>
+            <button class="filter-btn" data-filter="active">
+                ⚡ Активные
+            </button>
+            <button class="filter-btn" data-filter="completed">
+                ✅ Завершенные
+            </button>
+            <button class="filter-btn" data-filter="high">
+                🔥 Высокий приоритет
+            </button>
+        </div>
+
+        <div class="tasks-list" id="tasks-list">
+            <div class="empty-state">
+                <div class="empty-state-icon">📋</div>
+                <p>Нет задач. Добавьте первую задачу выше!</p>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="./scripts/ui.ts"></script>
+</body>
+</html>

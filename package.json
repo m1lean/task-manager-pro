@@ -1,0 +1,17 @@
+{
+  "name": "task-manager-pro",
+  "version": "1.0.0",
+  "description": "Modern task management application built with TypeScript, Node.js, Express and beautiful animated UI",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "keywords": ["task-manager", "typescript", "express", "node"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
